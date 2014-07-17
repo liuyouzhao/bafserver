@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<!-- Main Server Init -->
+	<servlet>
+		<description></description>
+		<display-name>BafServerMain</display-name>
+		<servlet-name>BafServerMain</servlet-name>
+		<servlet-class>com.baf.server.BafServerMain</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BafServerMain</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- API Test -->
+	<servlet>
+		<description></description>
+		<display-name>API_Test</display-name>
+		<servlet-name>API_Test</servlet-name>
+		<servlet-class>com.baf.server.api.test.API_Test</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>API_Test</servlet-name>
+		<url-pattern>/api</url-pattern>
+	</servlet-mapping>
+
+	<!-- Validate Code Generate -->
+	<servlet>
+		<servlet-name>validateCodeServlet</servlet-name>
+		<servlet-class>com.baf.server.ValidateCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>validateCodeServlet</servlet-name>
+		<url-pattern>/validatecode</url-pattern>
+	</servlet-mapping>
+</web-app>

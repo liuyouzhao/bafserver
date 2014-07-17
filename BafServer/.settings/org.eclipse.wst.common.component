@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="BafServer">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="HiberUsage.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/HiberUsage/HiberUsage">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lucene-core-3.6.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/lucene-core-3.6.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-core-4.3.5.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/hibernate-core-4.3.5.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-commons-annotations-4.0.4.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/hibernate-commons-annotations-4.0.4.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mysql-connector-java-5.1.16-bin.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/mysql-connector-java-5.1.16-bin.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-jpa-2.1-api-1.0.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/hibernate-jpa-2.1-api-1.0.0.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jboss-transaction-api_1.1_spec-1.0.1.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jboss-transaction-api_1.1_spec-1.0.1.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dom4j-1.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/dom4j-1.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-core-asl-1.9.13.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jackson-core-asl-1.9.13.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javassist-3.18.1-GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/javassist-3.18.1-GA.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-search-orm-4.5.1.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/hibernate-search-orm-4.5.1.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jandex-1.1.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jandex-1.1.0.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="avro-1.7.6.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/avro-1.7.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-search-engine-4.5.1.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/hibernate-search-engine-4.5.1.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="paranamer-2.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/paranamer-2.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jboss-logging-annotations-1.2.0.Beta1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jboss-logging-annotations-1.2.0.Beta1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-compress-1.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/commons-compress-1.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="slf4j-api-1.6.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/slf4j-api-1.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-mapper-asl-1.9.13.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jackson-mapper-asl-1.9.13.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jboss-logging-3.1.4.GA.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/jboss-logging-3.1.4.GA.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="antlr-2.7.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/antlr-2.7.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xml-apis-1.3.03.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/HiberUsage/xml-apis-1.3.03.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="BafServer"/>
+        <property name="java-output-path" value="/BafServer/build/classes"/>
+    </wb-module>
+</project-modules>
