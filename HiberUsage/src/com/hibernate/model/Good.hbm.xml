@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate.model">
+
+	<class name="Good" table="good">
+		<id name="id" column="id" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="menu" type="integer" />
+		<property name="ordered" type="integer" />
+		<property name="price" type="integer" />
+		<property name="state" type="integer" />
+		<property name="favor" type="integer" />
+		<property name="nega" type="integer" />
+		<property name="deleted" type="integer" />
+		
+		<property name="uuid" />
+		<property name="name" />
+		<property name="username" />
+		<property name="picture" />
+		<property name="description" />
+		<property name="detail" />
+	</class>
+	
+</hibernate-mapping>

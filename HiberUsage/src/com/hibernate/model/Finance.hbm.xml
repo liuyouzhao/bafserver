@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate.model">
+
+	<class name="Finance" table="finance">
+		<id name="id" column="id" type="integer">
+			<generator class="increment" />
+		</id>		
+		<property name="finance0" type="double"/>
+		<property name="finance1" type="double"/>
+		<property name="finance2" type="double"/>
+		<property name="finance3" type="double"/>
+		<property name="finance4" type="double"/>
+		<property name="finance5" type="double"/>
+		<property name="finance6" type="double"/>
+		<property name="finance7" type="double"/>
+		<property name="finance8" type="double"/>
+		<property name="finance9" type="double"/>
+		<property name="finance10" type="double"/>
+		<property name="finance11" type="double"/>
+		<property name="finance12" type="double"/>
+		<property name="fintype" type="integer"/>
+		<property name="newest" type="integer"/>
+		<property name="date" type="java.util.Date">
+			<column name="date" length="10" not-null="true" />
+		</property>
+	</class>
+	
+</hibernate-mapping>

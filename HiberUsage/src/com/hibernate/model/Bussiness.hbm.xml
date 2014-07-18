@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hibernate.model">
+
+	<class name="Bussiness" table="bussiness">
+		<id name="id" column="id" type="integer">
+			<generator class="increment" />
+		</id>		
+		<property name="uuid" />
+		<property name="buyername" />
+		<property name="sellername" />
+		<property name="goodkey" />
+		
+		<property name="date" type="java.util.Date">
+			<column name="date" length="10" not-null="true" />
+		</property>
+	</class>
+	
+</hibernate-mapping>
