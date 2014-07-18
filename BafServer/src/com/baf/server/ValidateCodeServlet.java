@@ -23,7 +23,7 @@ public class ValidateCodeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		ValidateCode vCode = new ValidateCode(80, 28, 4, 100);
-		session.setAttribute("code", vCode.getCode());
+		session.setAttribute("verycode", vCode.getCode());
 		vCode.write(response.getOutputStream());
 	}
 

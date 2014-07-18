@@ -18,5 +18,6 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="HiberUsage"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="json-lib-2.4-jdk15.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
