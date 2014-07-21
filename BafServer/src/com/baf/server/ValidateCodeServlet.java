@@ -27,4 +27,17 @@ public class ValidateCodeServlet extends HttpServlet {
 		vCode.write(response.getOutputStream());
 	}
 
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("image/jpeg");
+		response.setHeader("Pragma", "no-cache");
+		response.setHeader("Cache-Control", "no-cache");
+		response.setDateHeader("Expires", 0);
+		
+		HttpSession session = request.getSession();
+		
+		ValidateCode vCode = new ValidateCode(80, 28, 4, 100);
+		session.setAttribute("verycode", vCode.getCode());
+		vCode.write(response.getOutputStream());
+	}
 }

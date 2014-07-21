@@ -9,4 +9,13 @@ public class ArgumentUtil {
 	public static String getContent(HttpServletRequest req) {
 		return req.getParameter(PARAMETER_NAME_CONTENT);
 	}
+	
+	public static String bytesToHexString(byte[] data) {
+		StringBuffer sb = new StringBuffer();
+		for(byte b : data) {
+			String str = String.format("%02x", b);
+			sb.append(str);
+		}
+		return sb.toString();
+	}
 }

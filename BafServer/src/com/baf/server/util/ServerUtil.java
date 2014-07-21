@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ServerUtil {
 	
-	public static String RETURN_JSON_STRING = "{'username':'%s','state':'%s','msg':'%s','data':'%s'}";
+	public static String RETURN_JSON_STRING = "{\"username\":\"%s\",\"state\":\"%s\",\"msg\":\"%s\",\"data\":\"%s\"}";
 	
 	public static String responseStringToClient(HttpServletResponse response, String content) throws IOException {
 		PrintWriter pw = response.getWriter();

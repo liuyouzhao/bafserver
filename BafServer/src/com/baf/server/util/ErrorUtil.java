@@ -10,7 +10,7 @@ public class ErrorUtil {
 	public static String ERROR_CODE_REGISTER_EXCEPTION = "error.code.register.exception";
 	public static String ERROR_CODE_LOGIN_EXCEPTION = "error.code.login.exception";
 	
-	public static String ERROR_JSON_STRING = "{'username':'%s', 'error':'%s','errormsg':'%s','yours':'%s'}";
+	public static String ERROR_JSON_STRING = "{\"username\":\"%s\", \"error\":\"%s\",\"errormsg\":\"%s\",\"yours\":\"%s\"}";
 	
 	public static String error(HttpServletResponse response, String username, String code, String msg, String yours) {
 		String content = String.format(ERROR_JSON_STRING, username, code, msg, yours);

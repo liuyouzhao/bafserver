@@ -51,7 +51,7 @@ public class CryptUtil {
      * HmacSHA512 
      * </pre>
 */
-    public static final String KEY_MAC = "HmacMD5";
+    public static final String KEY_MAC = "HmacSHA1";
 
     /**
      * BASE64Ω‚√‹

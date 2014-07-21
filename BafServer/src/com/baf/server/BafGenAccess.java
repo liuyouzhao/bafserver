@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.baf.server.process.BaseProcess;
-import com.baf.server.process.Login_Process;
+import com.baf.server.secure.BafLoginChecker;
+import com.baf.server.util.ServerUtil;
 
 /**
- * Servlet implementation class BafLogin
+ * Servlet implementation class BafGenAccess
  */
-@WebServlet("/BafLogin")
-public class BafLogin extends HttpServlet {
+@WebServlet("/BafGenAccess")
+public class BafGenAccess extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BafLogin() {
+    public BafGenAccess() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,22 +30,16 @@ public class BafLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			BaseProcess.create(Login_Process.class).process(request, response);
-		}  catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		String access = BafLoginChecker.generateAccessAndSave(request.getSession());
+		ServerUtil.responseStateStringToClient(response, "null", "ok", "give the access", access);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			BaseProcess.create(Login_Process.class).process(request, response);
-		}  catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		String access = BafLoginChecker.generateAccessAndSave(request.getSession());
+		ServerUtil.responseStateStringToClient(response, "null", "ok", "give the access", access);
 	}
 
 }

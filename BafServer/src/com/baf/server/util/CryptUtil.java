@@ -128,7 +128,18 @@ public class CryptUtil {
      * @throws Exception
 */
     public static byte[] encryptHMAC(byte[] data, String key) throws Exception {
-        SecretKey secretKey = new SecretKeySpec(decryptBASE64(key), KEY_MAC);
+    	/// Updated by harvey, don't use base64 key
+    	SecretKey secretKey = new SecretKeySpec(key.getBytes(), KEY_MAC);
+        //SecretKey secretKey = new SecretKeySpec(decryptBASE64(key), KEY_MAC);
+        Mac mac = Mac.getInstance(secretKey.getAlgorithm());
+        mac.init(secretKey);
+        return mac.doFinal(data);
+    }
+    
+    public static byte[] encryptHMAC(byte[] data, byte[] key) throws Exception {
+    	/// Updated by harvey, don't use base64 key
+    	SecretKey secretKey = new SecretKeySpec(key, KEY_MAC);
+        //SecretKey secretKey = new SecretKeySpec(decryptBASE64(key), KEY_MAC);
         Mac mac = Mac.getInstance(secretKey.getAlgorithm());
         mac.init(secretKey);
         return mac.doFinal(data);

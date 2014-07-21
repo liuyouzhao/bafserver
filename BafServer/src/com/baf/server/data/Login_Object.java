@@ -15,7 +15,6 @@ public class Login_Object extends BaseObject {
 	public String username;
 	public String passkey;
 	public String verycode;
-	
 	/// TODO: added much more upon ^^^:
 	
 	/// Self attribute:

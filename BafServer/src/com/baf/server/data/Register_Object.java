@@ -8,20 +8,22 @@ public class Register_Object extends BaseObject {
 
 	private String[] ATTRIBUTE_NAMES = new String[] {
 			"username",
-			"password"
+			"password",
+			"verycode"
 	};
 	public String username;
 	public String password;
+	public String verycode;
+	
 	private JSONObject jobj;
 	
 	@Override
 	public BaseObject wrap(String content) {
 		try {
 			this.jobj = JSONObject.fromObject(content);
-			String username = (String) jobj.get(ATTRIBUTE_NAMES[0]);
-			String password = (String) jobj.get(ATTRIBUTE_NAMES[1]);
-			this.username = username;
-			this.password = password;
+			this.username = (String) jobj.get(ATTRIBUTE_NAMES[0]);
+			this.password = (String) jobj.get(ATTRIBUTE_NAMES[1]);
+			this.verycode = (String) jobj.get(ATTRIBUTE_NAMES[2]);
 			return this;
 		}
 		catch(Exception ex) {

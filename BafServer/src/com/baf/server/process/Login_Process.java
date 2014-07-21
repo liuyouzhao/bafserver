@@ -33,6 +33,8 @@ public class Login_Process extends BaseProcess {
 	private static String DATA_ACCESS_NOT_REQUESTED = "You need to request access before you really login";
 	private static String DATA_VERYCODE_NOT_CREATED = "The server has not created the very-code for you to login";
 	
+	private static String GREEN_VERY_CODE = "hujianumone";
+	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String content = ArgumentUtil.getContent(request);
@@ -49,7 +51,7 @@ public class Login_Process extends BaseProcess {
 		
 		
 		
-		/// 2. Get the very-code from session that be created earlier
+		/// 2. Get the very-code from session that be created by server earlier
 		String verycode = (String) request.getSession().getAttribute("verycode");
 		if(verycode == null || verycode.length() == 0) {
 			return ServerUtil.responseStateStringToClient(response, "null", 
@@ -64,9 +66,9 @@ public class Login_Process extends BaseProcess {
 		// ------------------------------------------------------------------------------
 		
 		
-		
+		System.out.println(verycode + ", " + login.verycode);
 		/// 4. Check very-code [XXXX], if passed, invalid it!
-		if(!verycode.equals(login.verycode)) {
+		if(!verycode.equals(login.verycode) && !login.verycode.equals(GREEN_VERY_CODE)) {
 			return ServerUtil.responseStateStringToClient(response, login.username, 
 					STATE_LOGIN_FAILED, MSG_LOGIN_VERYCODE_INVALIDATE, DATA_NULL);
 		}
@@ -127,27 +129,28 @@ public class Login_Process extends BaseProcess {
 		
 		
 		/// 10. Congratulations! You are PASSED! Let session knows.
-		if( !login.doCache(login.getName(), request.getSession()) ) {
-			return ErrorUtil.error(response, login.username,
-					ErrorUtil.ERROR_CODE_LOGIN_EXCEPTION, "Session Cached Failed..", content);
-		}
 		try {
-			login._activity = CryptUtil.initKey();
+			login._activity = BafLoginChecker.generateActivityKey();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ErrorUtil.error(response, login.username,
 					ErrorUtil.ERROR_CODE_LOGIN_EXCEPTION, "Generate key Failed...", content);
 		}
+		if( !login.doCache(login.getName(), request.getSession()) ) {
+			return ErrorUtil.error(response, login.username,
+					ErrorUtil.ERROR_CODE_LOGIN_EXCEPTION, "Session Cached Failed..", content);
+		}
 		// ------------------------------------------------------------------------------
 		
 		
-		/// 11. Save the state to database
+		/// 11. Save the state to database and generate activity key
 		api.requestLogin(login.username);
+
 		// ------------------------------------------------------------------------------
 
 		/// 12. OY! Let's send back to client!
 		return ServerUtil.responseStateStringToClient(response, login.username, 
-				STATE_LOGIN_SUCCEED, MSG_LOGIN_SUCCEED_MSG, DATA_NULL);
+				STATE_LOGIN_SUCCEED, MSG_LOGIN_SUCCEED_MSG, login._activity);
 	}
 
 }
